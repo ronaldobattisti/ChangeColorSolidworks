@@ -18,16 +18,15 @@ namespace SolidWorksAutomation
 
             if (swApp != null)
             {
-
-
                 swApp.Visible = true;
                 Console.WriteLine("SolidWorks opened successfully.");
 
                 // Define file path and document type
                 Console.WriteLine("Inputh the code: ");
-                /*string code = Console.ReadLine();
-                string filePath = @"M:\003-MÁQUINAS\PEÇAS DE MÁQUINAS\" + code + ".SLDASM";*/
-                string filePath = @"M:\003-MÁQUINAS\PEÇAS DE MÁQUINAS\384513.SLDPRT";
+                string code = Console.ReadLine();
+                //string partPath = @"M:\003-MÁQUINAS\PEÇAS DE MÁQUINAS\" + code + ".SLDPRT";
+                string filePath = @"M:\003-MÁQUINAS\PEÇAS DE MÁQUINAS\" + code + ".SLDASM";
+                //string filePath = @"M:\003-MÁQUINAS\PEÇAS DE MÁQUINAS\384514.SLDPRT";
                 Console.WriteLine(filePath);
                 int documentType = (int)swDocumentTypes_e.swDocPART;
                 int openOptions = (int)swOpenDocOptions_e.swOpenDocOptions_Silent;
@@ -69,15 +68,12 @@ namespace SolidWorksAutomation
                         }
                     }
                 }
-                Console.Write("Start delay\n");
-                Thread.Sleep(1000);
-                Console.Write("End delay\n");
+
+                Thread.Sleep(500); //This delay is used to avoid SolidWorks crashes
                 
-                Console.WriteLine("Changing color");
-                //double[] color = [67, 0, 2];
-                double[] color = Utilities.getColor(paintCode);
-                swModel.MaterialPropertyValues = color;
-                Console.WriteLine("Color changed");
+                double[] materialProps = (double[])swModel.MaterialPropertyValues; //get the visual properties of the actual part in a variable
+                materialProps = Utilities.getColor(paintCode, materialProps); //Send the variable with the cod of the color to the function
+                swModel.MaterialPropertyValues = materialProps; //The function return a double[] with all properties and color changed
                 swModel.EditRebuild3();
 
             }

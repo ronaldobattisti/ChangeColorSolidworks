@@ -17,3 +17,4 @@ c:\Users\rbattisti\Desktop\Teste Macro Cs\SolidWorksApp\bin\Debug\net8.0\SolidWo
 c:\Users\rbattisti\Desktop\Teste Macro Cs\SolidWorksApp\obj\Debug\net8.0\SolidWorksApp.csproj.AssemblyReference.cache
 C:\Users\rbattisti\Desktop\Teste Macro Cs\SolidWorksApp\obj\Debug\net8.0\SolidWorksApp.csproj.CopyComplete
 c:\Users\rbattisti\Desktop\Teste Macro Cs\SolidWorksApp\bin\Debug\net8.0\SolidWorks.Interop.swpublished.dll
+c:\Users\rbattisti\Desktop\Teste Macro Cs\SolidWorksApp\obj\Debug\net8.0\SolidWorksApp.sourcelink.json
